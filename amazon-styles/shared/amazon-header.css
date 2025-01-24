@@ -1,0 +1,61 @@
+.amazon-header{
+    background-color: rgb(19, 25, 33);
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 60px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    position: fixed;
+}
+
+.amazon-header-left{
+    width: 180px;
+}
+
+@media(max-width:800px){
+    .amazon-header-left{
+        width: unset;
+    }
+}
+
+.header-link {
+    display: inline-block;
+    padding: 6px;
+    cursor: pointer;
+    border: 2px;
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,0);
+}
+
+.header-link:hover{
+    border: 1px solid white;
+}
+
+.amazon-logo {
+    width: 100px;
+    margin-top: 5px;
+}
+
+.amazon-logo-mobile {
+    display: none;
+}
+
+@media(max-width:575px){
+    .amazon-logo{
+        display: none;
+    }
+
+    .amazon-logo-mobile{
+        display: block;
+        height: 35px;
+        margin-top: 5px;
+    }
+}
+
