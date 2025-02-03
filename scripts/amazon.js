@@ -1,6 +1,6 @@
-const products = [{
+const product = [{
     image:"images/products/athletic-cotton-socks-6-pairs.jpg",
-    name :  'Black and Gray Athletic Cotton Socks - 6 Pairs',
+    name : ' Black and Gray Athletic Cotton Socks - 6 Pairs',
     rating : {
        stars: 4.5,
        count: 87
@@ -25,27 +25,30 @@ const products = [{
 }
 ];
 
-products.forEach((product) => {
-    const html = `<div class="product-container">
+let productsHTML = '';
+
+product.forEach((product) => {
+  productsHTML += 
+   `<div class="product-container">
           <div class="product-image-container">
             <img class="product-image"
-              src="${products.image}">
+              src=${product.image}>
           </div>
 
           <div class="product-name limit-text-to-2-lines">
-            ${products.name}
+            ${product.name}
           </div>
 
           <div class="product-rating-container">
             <img class="product-rating-stars"
-              src="images/ratings/rating-${products.rating.stars * 10}.png">
+              src="images/ratings/rating-${product.rating.stars * 10}.png">
             <div class="product-rating-count link-primary">
-              ${products.rating.count}
+              ${product.rating.count}
             </div>
           </div>
 
           <div class="product-price">
-            $${products.priceCents / 100}
+            $${(product.priceCents / 100).toFixed(2)}
           </div>
 
           <div class="product-quantity-container">
@@ -74,5 +77,8 @@ products.forEach((product) => {
             Add to Cart
           </button>
         </div>`;
-        console.log(html);
 });
+
+console.log(productsHTML);
+
+document.querySelector('.js-products-grid').innerHTML = productsHTML;
